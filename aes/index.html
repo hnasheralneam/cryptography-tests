@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <title>AES Encryption</title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+   <div class="section">
+      <div>
+         <p>Data to encrypt</p>
+         <input id="text" type="text" placeholder="Enter text to encrypt"><br>
+      </div>
+      <div class="subsection">
+         <p>Password</p>
+         <input id="password" type="text" value="longenoughpassword"><br>
+      </div>
+   </div>
+   <br>
+   <div class="section">
+      <button onclick="encrypt()">encrypt</button>
+      <button onclick="decrypt()">decrypt</button>
+      <p>Encrypted Data</p>
+      <span id="EncryptedValue"></span><br>
+      <p>Decrypted Data</p>
+      <span id="decrypted"></span>
+   </div>
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,52 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   text-align: center;
+}
+
+p {
+   padding-bottom: .2em;
+   font-size: 1.2em;
+}
+
+input {
+   padding: .35em .5em;
+   background-color: #eee;
+   border: none;
+   border-radius: .2em;
+   transition: .15s;
+}
+
+input:focus {
+   outline: none;
+   background-color: #ddd;
+}
+
+button {
+   padding: .4em .6em;
+   background-color: #bbb;
+   border: none;
+   border-radius: .2em;
+   transition: .15s;
+}
+
+button:active {
+   background-color: #aaa;
+}
+
+.section {
+   padding: 2em 1em;
+   margin-top: 1em;
+   width: 18em;
+   display: inline-block;
+   background-color: #f7f7f7;
+   border-radius: .3em;
+   word-break: break-all;
+}
+
+.subsection {
+   margin-top: 1em;
+}
