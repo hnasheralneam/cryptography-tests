@@ -3,31 +3,49 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Google Icons -->
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
    <link rel="stylesheet" href="styles.css">
    <title>AES Encryption</title>
 </head>
 <body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-
-   <div class="section">
-      <div>
+   <div class="section plaintext-and-password">
+      <div class="plaintext">
+         <span class="material-symbols-rounded">notes</span>
          <p>Data to encrypt</p>
-         <input id="text" type="text" placeholder="Enter text to encrypt"><br>
+         <textarea id="text" type="text" placeholder="Enter text to encrypt"></textarea>
       </div>
-      <div class="subsection">
-         <p>Password</p>
-         <input id="password" type="text" value="longenoughpassword"><br>
+      <div class="password subsection">
+         <div>
+            <span class="material-symbols-rounded">key</span>
+            <p>Password</p>
+            <input id="password" type="text" value="longenoughpassword">
+         </div>
       </div>
    </div>
-   <br>
-   <div class="section">
-      <button onclick="encrypt()">encrypt</button>
-      <button onclick="decrypt()">decrypt</button>
-      <p>Encrypted Data</p>
-      <span id="EncryptedValue"></span><br>
-      <p>Decrypted Data</p>
-      <span id="decrypted"></span>
+   <div class="section ciphertext-and-plaintext">
+      <div class="controls">
+         <div>
+            <button onclick="encrypt()" class="encrypt-btn">
+               <span class="material-symbols-rounded">lock</span>
+               encrypt</button>
+            <button onclick="decrypt()" class="decrypt-btn">
+               <span class="material-symbols-rounded">lock_open</span>
+               decrypt</button>
+         </div>
+      </div>
+      <div class="ciphertext">
+         <span class="material-symbols-rounded">password</span>
+         <p>Encrypted Data</p>
+         <p class="text" id="EncryptedValue"></p>
+      </div>
+      <div class="decoded-text">
+         <span class="material-symbols-rounded">notes</span>
+         <p>Decrypted Data</p>
+         <p class="text" id="decrypted"></p>
+      </div>
    </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </html>

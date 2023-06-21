@@ -1,10 +1,15 @@
 * {
    padding: 0;
    margin: 0;
+   font-size: 15px;
 }
 
 body {
+   height: 100vh;
    text-align: center;
+   background-color: #f3f6fd;
+   display: grid;
+   grid-template-columns: 50% 50%;
 }
 
 p {
@@ -12,41 +17,160 @@ p {
    font-size: 1.2em;
 }
 
-input {
-   padding: .35em .5em;
-   background-color: #eee;
+input, textarea {
+   padding: .4em .7em;
+   background-color: #fff;
    border: none;
-   border-radius: .2em;
+   border-radius: .5em;
    transition: .15s;
 }
 
-input:focus {
+textarea {
+   min-width: 12vw;
+   max-width: 40vw;
+   min-height: 6vh;
+   max-height: 50vh;
+   font-family: sans-serif;
+   transition: none;
+}
+
+input:focus, textarea:focus {
    outline: none;
-   background-color: #ddd;
+   /* background-color: #f8f8f8; */
+   margin-top: -.2em;
+   box-shadow: 0 .2em .2em #aaaaaa40;
 }
 
 button {
-   padding: .4em .6em;
-   background-color: #bbb;
+   padding: .6em .8em;
+   margin: .4em;
+   background-color: #fafafa;
    border: none;
-   border-radius: .2em;
+   border-radius: 1em;
+   box-shadow: 0 0 .1em #aaaaaa40;
+   text-transform: uppercase;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
    transition: .15s;
 }
 
-button:active {
-   background-color: #aaa;
+button span {
+   margin-right: .3em;
 }
+
+button:hover {
+   background-color: #fff;
+}
+
+button:active {
+   background-color: #f6f6f6;
+}
+
+.encrypt-btn { color: #19c436; }
+.decrypt-btn { color: #eb0f0f; }
+
 
 .section {
-   padding: 2em 1em;
-   margin-top: 1em;
-   width: 18em;
+   padding: 1em;
+   margin: 1em;
    display: inline-block;
-   background-color: #f7f7f7;
-   border-radius: .3em;
+   background-color: #fff;
+   border-radius: 1em;
    word-break: break-all;
+   box-shadow: 0 0 .1em #aaaaaa20;
 }
 
-.subsection {
-   margin-top: 1em;
+.plaintext-and-password {
+   display: grid;
+   grid-template-rows: 80% 20%;
+}
+
+.plaintext {
+   padding: 1em 3em;
+   margin-bottom: 1em;
+   background-color: #c5f7ff;
+   border-radius: 1em;
+}
+
+.password {
+   padding: 1em 3em;
+   background-color: #d3ffc7;
+   border-radius: 1em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.section:first-child {
+   margin-right: 0;
+}
+
+
+.ciphertext-and-plaintext {
+   display: grid;
+   grid-template-rows: 20% 40% 40%;
+}
+
+.controls {
+   padding: 1em 3em;
+   margin-bottom: 1em;
+   background-color: #ffeac7;
+   border-radius: 1em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.ciphertext {
+   padding: 1em 3em;
+   margin-bottom: 1em;
+   background-color: #f6c7ff;
+   border-radius: 1em;
+}
+
+.decoded-text {
+   padding: 1em 3em;
+   background-color: #ffc7d7;
+   border-radius: 1em;
+}
+
+.text {
+   padding: 1em 3em;
+   margin: 1em 3em;
+   color: #333;
+   background-color: #fff;
+   border-radius: 1em;
+}
+
+.text:empty {
+   padding: 0;
+}
+
+/* Less padding if on a smaller screen */
+@media screen and (max-width: 750px) {
+   * {
+      padding: 0;
+      margin: 0;
+   }
+}
+
+/* Collape body into one column if on a small mobile device */
+@media screen and (max-width: 650px) {
+   body {
+      display: block;
+   }
+   textarea {
+      min-width: 40vw;
+      max-width: 60vw;
+      min-height: 10vh;
+      max-height: 50vh;
+   }
+   .text {
+      padding: 1em 1.5em;
+      margin: .5em;
+   }
+   .plaintext-and-password, .ciphertext-and-plaintext {
+      display: block;
+   }
 }
